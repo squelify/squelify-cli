@@ -2,9 +2,12 @@
 
 [![Contribution](https://badgen.net/badge/icon/Contributions%20Welcome?icon=bitcoin-lightning&label&color=black&labelColor=black)][contribution]
 
-Squelify Command Line Interface.
+Squelify CLI is a useful command-line tool that streamlines development of Squelify
+applications. This CLI provides essential commands for creating applications, managing
+database migrations, and handling configurations - all designed to boost developer
+productivity by eliminating manual setup tasks.
 
-## 🏁 Quickstart
+## Quick Start
 
 ##### Using `npx`
 
@@ -18,16 +21,16 @@ npx squelify@latest --help
 pnpm dlx squelify@latest --help
 ```
 
-## 👷‍♂️ Contributions
+## Contributions
 
 Contributions are welcome! Please open a pull requests for your changes and tickets
 in case you would like to discuss something or have a question.
 
-## 💬 Feedback
+## Feedback
 
 Please provide feedback! 🤗 Ideally by [filing an issue here](https://github.com/squelify/squelify-cli/issues) – or via a pull request.
 
-## 📝 License
+## License
 
 This project is open-sourced software licensed under the [MIT license][license-mit].
 
@@ -47,8 +50,6 @@ See the [license file](./LICENSE) for more information.
 </a>
 
 <!-- link reference definition -->
-[biome]: https://biomejs.dev
 [contribution]: https://github.com/squelify/squelify-cli/pulse
 [github-sponsors]: https://github.com/sponsors/squelify
 [license-mit]: https://choosealicense.com/licenses/mit/
-[vscode-biome]: https://marketplace.visualstudio.com/items?itemName=biomejs.biome
