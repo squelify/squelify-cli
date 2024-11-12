@@ -1,0 +1,70 @@
+{
+    "name": "squelify",
+    "version": "0.0.0",
+    "description": "Squelify Command Line Interface",
+    "author": "Aris Ripandi <aris@squelify.com>",
+    "license": "MIT",
+    "type": "module",
+    "keywords": ["squelify", "cli", "command-line", "utilities"],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/squelify/squelify-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/squelify/squelify-cli/issues"
+    },
+    "homepage": "https://github.com/squelify/squelify-cli#readme",
+    "exports": {
+        ".": "./dist/index.mjs"
+    },
+    "bin": {
+        "squelify": "./bin/squelify.mjs"
+    },
+    "main": "./bin/squelify.mjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": ["bin", "dist"],
+    "scripts": {
+        "build": "unbuild",
+        "build:stub": "unbuild --stub",
+        "dev:prepare": "unbuild --stub",
+        "dev": "pnpm build &>/dev/null && pnpm -s squelify",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "prepack": "pnpm --silent run build",
+        "pre-commit": "lefthook run pre-commit --force",
+        "postinstall": "lefthook install || true",
+        "squelify": "node ./bin/squelify.mjs",
+        "release": "pnpm publish",
+        "release:dry": "pnpm publish --no-git-checks --dry-run",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!deps)/\"",
+        "cleanup:dev": "pnpm dlx rimraf .{build,data,tmp} build dist",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "typecheck": "tsc -b --noEmit"
+    },
+    "dependencies": {
+        "citty": "^0.1.6",
+        "consola": "^3.2.3",
+        "giget": "^1.2.3",
+        "make-dir": "^5.0.0",
+        "node-jq": "^6.0.1",
+        "pathe": "^1.1.2",
+        "std-env": "^3.8.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@types/node": "^22.9.0",
+        "lefthook": "^1.8.2",
+        "npm-check-updates": "^17.1.11",
+        "typescript": "^5.6.3",
+        "unbuild": "^2.0.0",
+        "unplugin-purge-polyfills": "^0.0.7"
+    },
+    "publishConfig": {
+        "executableFiles": ["./bin/squelify.mjs"],
+        "access": "public"
+    },
+    "packageManager": "pnpm@9.12.3"
+}
